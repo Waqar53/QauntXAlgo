@@ -6,7 +6,7 @@
 ![FastAPI](https://img.shields.io/badge/FastAPI-009688?style=for-the-badge&logo=fastapi&logoColor=white)
 ![License](https://img.shields.io/badge/License-MIT-green?style=for-the-badge)
 
-### 🏦 Quant-Grade Algorithmic Trading Platform
+###  Quant-Grade Algorithmic Trading Platform
 
 **A full-stack hedge fund operating system with real Python code execution, live backtesting, and comprehensive risk management.**
 
@@ -16,22 +16,22 @@
 
 ---
 
-## 🎯 What is QuantXalgo?
+##  What is QuantXalgo?
 
 QuantXalgo is a **production-ready algorithmic trading platform** that simulates a real hedge fund's technology stack. Built for quants, traders, and fintech engineers who want to:
 
-- ✅ **Write and test any Python trading algorithm** in a sandboxed execution environment
-- ✅ **Backtest strategies** against historical data with realistic execution
-- ✅ **Monitor real-time portfolio performance** with institutional-grade dashboards
-- ✅ **Manage risk** with VaR, stress testing, and kill switch functionality
+- **Write and test any Python trading algorithm** in a sandboxed execution environment
+- **Backtest strategies** against historical data with realistic execution
+- **Monitor real-time portfolio performance** with institutional-grade dashboards
+- **Manage risk** with VaR, stress testing, and kill switch functionality
 
 This is **not a toy project** — it's a complete hedge fund operating system.
 
 ---
 
-## 🚀 Features
+## Features
 
-### 🧪 Quant Lab - Full Python IDE
+### Quant Lab - Full Python IDE
 
 Write **any trading algorithm** and execute it against market data:
 
@@ -55,12 +55,12 @@ class TrendFollowingMomentum(QuantLabStrategy):
 ```
 
 **The code executes in real-time** with:
-- 📊 Live equity curve visualization
-- 📋 Complete trade log with P&L
-- 📈 Performance metrics (Sharpe, Sortino, Max DD)
-- 🔄 Position tracking and order management
+-  Live equity curve visualization
+-  Complete trade log with P&L
+-  Performance metrics (Sharpe, Sortino, Max DD)
+-  Position tracking and order management
 
-### 📊 Live Dashboard
+### Live Dashboard
 
 Real-time monitoring of:
 - **NAV (Net Asset Value)** with historical equity curve
@@ -68,14 +68,14 @@ Real-time monitoring of:
 - **Active positions** with unrealized gains
 - **Risk metrics** (VaR, leverage, drawdown)
 
-### 🛡️ Risk Management
+###  Risk Management
 
 - **Value at Risk (VaR)** - 95% confidence interval
 - **Stress Testing** - 2008 Crisis, COVID-19, Flash Crash scenarios
 - **Kill Switch** - Emergency position liquidation
 - **Position Limits** - Concentration and leverage controls
 
-### 📈 Reports Section
+### Reports Section
 
 - **Performance Analytics** - YTD, MTD, inception returns
 - **Trade History** - Full audit trail with filters
@@ -84,7 +84,7 @@ Real-time monitoring of:
 
 ---
 
-## 💻 Quick Start
+##  Quick Start
 
 ### Prerequisites
 
@@ -117,7 +117,7 @@ Open `frontend/index.html` in your browser and you'll see:
 
 ---
 
-## 🧪 Quant Lab - Python IDE
+##  Quant Lab - Python IDE
 
 ### How It Works
 
@@ -181,7 +181,7 @@ class BollingerMeanReversion(QuantLabStrategy):
 
 ---
 
-## 📊 Backtest Results
+## Backtest Results
 
 ### Trend Following Strategy
 
@@ -200,7 +200,7 @@ Tested on $25M capital over 3 years:
 ### Multi-Asset Allocation
 
 ```
-📊 SYMBOLS TRADED:
+ SYMBOLS TRADED:
    • NVDA: 16 trades, $1,578,181 volume
    • AAPL: 12 trades, $1,164,834 volume
    • MSFT: 20 trades, $1,048,603 volume  
@@ -211,23 +211,23 @@ Tested on $25M capital over 3 years:
 ### Trade Execution Logs
 
 ```
-📈 TREND ENTRY: GOOGL
+ TREND ENTRY: GOOGL
    Price: $256.80
    MA Alignment: Fast > Slow > Trend ✓
    5d Momentum: +0.7%
    20d Momentum: +3.9%
 
-⬆️ SCALING UP: AMZN
+ SCALING UP: AMZN
    Current P&L: +16.7%
    Adding 311 shares
 
-💰 TAKING PROFIT: NVDA
+TAKING PROFIT: NVDA
    Gain: +20.5%
 ```
 
 ---
 
-## 🏗️ Architecture
+##  Architecture
 
 ```
 quantxalgo/
