@@ -25,7 +25,7 @@ QuantXalgo is a **production-ready algorithmic trading platform** that simulates
 - **Monitor real-time portfolio performance** with institutional-grade dashboards
 - **Manage risk** with VaR, stress testing, and kill switch functionality
 
-This is **not a toy project** — it's a complete hedge fund operating system.
+it's a complete hedge fund operating on paper currency
 
 ---
 
