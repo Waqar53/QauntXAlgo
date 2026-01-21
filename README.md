@@ -6,7 +6,7 @@
 ![FastAPI](https://img.shields.io/badge/FastAPI-009688?style=for-the-badge&logo=fastapi&logoColor=white)
 ![License](https://img.shields.io/badge/License-MIT-green?style=for-the-badge)
 
-### 🏦 Institutional-Grade Algorithmic Trading Platform
+### 🏦 Quant-Grade Algorithmic Trading Platform
 
 **A full-stack hedge fund operating system with real Python code execution, live backtesting, and comprehensive risk management.**
 
