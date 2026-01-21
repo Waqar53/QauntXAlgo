@@ -1,0 +1,329 @@
+.dashboard {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    background: #0a0a0a;
+    color: #fff;
+    font-family: 'Inter', -apple-system, sans-serif;
+}
+
+/* Header */
+.dash-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 12px 24px;
+    background: #111;
+    border-bottom: 1px solid #222;
+}
+
+.breadcrumb {
+    font-size: 13px;
+    color: #888;
+}
+
+.bc-root {
+    color: #666;
+}
+
+.bc-env {
+    color: #888;
+}
+
+.bc-page {
+    color: #00ff88;
+    font-weight: 500;
+}
+
+.market-status {
+    display: flex;
+    gap: 16px;
+}
+
+.market-badge {
+    font-size: 12px;
+    color: #888;
+}
+
+.market-badge.open {
+    color: #00ff88;
+}
+
+.refresh-badge {
+    font-size: 12px;
+    color: #666;
+    padding: 2px 8px;
+    background: #1a1a1a;
+    border-radius: 4px;
+}
+
+.time-display {
+    font-size: 13px;
+    color: #888;
+    font-family: 'Fira Code', monospace;
+}
+
+/* Metrics Row */
+.metrics-row {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 16px;
+    padding: 20px 24px;
+}
+
+.metric-box {
+    background: #111;
+    border: 1px solid #222;
+    border-radius: 8px;
+    padding: 16px 20px;
+}
+
+.metric-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 8px;
+}
+
+.metric-title {
+    font-size: 11px;
+    color: #666;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.metric-icon {
+    font-size: 14px;
+    color: #444;
+}
+
+.metric-value {
+    font-size: 28px;
+    font-weight: 600;
+    color: #fff;
+    margin-bottom: 8px;
+}
+
+.metric-delta {
+    font-size: 12px;
+    color: #666;
+}
+
+.metric-delta.positive {
+    color: #00ff88;
+}
+
+.metric-delta.negative {
+    color: #ff4444;
+}
+
+/* Content Grid */
+.dash-content {
+    flex: 1;
+    display: grid;
+    grid-template-columns: 1fr 320px;
+    gap: 20px;
+    padding: 0 24px 20px;
+    overflow: hidden;
+}
+
+/* Chart Section */
+.chart-section {
+    background: #111;
+    border: 1px solid #222;
+    border-radius: 8px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+}
+
+.chart-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 16px;
+}
+
+.chart-header h2 {
+    font-size: 16px;
+    font-weight: 500;
+    color: #fff;
+}
+
+.timeframe-selector {
+    display: flex;
+    gap: 4px;
+}
+
+.tf-btn {
+    padding: 6px 12px;
+    background: transparent;
+    border: 1px solid #333;
+    border-radius: 4px;
+    color: #888;
+    font-size: 12px;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.tf-btn:hover {
+    background: #1a1a1a;
+    color: #fff;
+}
+
+.tf-btn.active {
+    background: #00ff88;
+    border-color: #00ff88;
+    color: #000;
+    font-weight: 500;
+}
+
+.chart-container {
+    flex: 1;
+    min-height: 300px;
+}
+
+/* Strategies Panel */
+.strategies-panel {
+    background: #111;
+    border: 1px solid #222;
+    border-radius: 8px;
+    padding: 16px;
+    overflow-y: auto;
+}
+
+.strat-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 16px;
+}
+
+.strat-header h3 {
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.updated-badge {
+    font-size: 11px;
+    color: #00ff88;
+}
+
+.strat-list {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.strat-card {
+    background: #0a0a0a;
+    border: 1px solid #222;
+    border-radius: 6px;
+    padding: 12px;
+}
+
+.strat-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 12px;
+}
+
+.strat-name {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 13px;
+    font-weight: 500;
+}
+
+.strat-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+}
+
+.strat-dot.green {
+    background: #00ff88;
+}
+
+.strat-dot.red {
+    background: #ff4444;
+}
+
+.strat-type {
+    font-size: 10px;
+    padding: 2px 8px;
+    background: #222;
+    border-radius: 4px;
+    color: #888;
+}
+
+.strat-metrics {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+    margin-bottom: 12px;
+}
+
+.strat-metric {
+    display: flex;
+    flex-direction: column;
+}
+
+.sm-label {
+    font-size: 10px;
+    color: #666;
+    text-transform: uppercase;
+    margin-bottom: 4px;
+}
+
+.sm-value {
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.sm-value.positive {
+    color: #00ff88;
+}
+
+.sm-value.negative {
+    color: #ff4444;
+}
+
+.strat-footer {
+    display: flex;
+    justify-content: space-between;
+    font-size: 11px;
+    color: #666;
+    padding-top: 8px;
+    border-top: 1px solid #222;
+}
+
+/* System Bar */
+.system-bar {
+    padding: 12px 24px;
+    background: #111;
+    border-top: 1px solid #222;
+}
+
+.sys-status {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.sys-label {
+    font-size: 11px;
+    color: #666;
+    text-transform: uppercase;
+}
+
+.sys-value {
+    font-size: 12px;
+    font-weight: 500;
+}
+
+.sys-value.operational {
+    color: #00ff88;
+}

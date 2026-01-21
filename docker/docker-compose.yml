@@ -1,0 +1,110 @@
+# QuantXalgo Docker Compose
+# Development environment with all services
+
+version: '3.8'
+
+services:
+  # ==========================================================================
+  # QuantXalgo API
+  # ==========================================================================
+  api:
+    build:
+      context: ..
+      dockerfile: docker/Dockerfile
+      target: development
+    container_name: quantxalgo-api
+    ports:
+      - "8000:8000"
+    volumes:
+      - ../:/app
+      - quantxalgo-data:/app/data
+      - quantxalgo-logs:/app/logs
+    environment:
+      - QUANTXALGO_ENV=development
+      - DEBUG=true
+      - LOG_LEVEL=INFO
+      - DATABASE_URL=postgresql+asyncpg://quantxalgo:quantxalgo@postgres:5432/quantxalgo
+      - REDIS_URL=redis://redis:6379/0
+    depends_on:
+      postgres:
+        condition: service_healthy
+      redis:
+        condition: service_healthy
+    networks:
+      - quantxalgo-network
+    restart: unless-stopped
+
+  # ==========================================================================
+  # PostgreSQL Database
+  # ==========================================================================
+  postgres:
+    image: postgres:15-alpine
+    container_name: quantxalgo-postgres
+    ports:
+      - "5432:5432"
+    environment:
+      - POSTGRES_USER=quantxalgo
+      - POSTGRES_PASSWORD=quantxalgo
+      - POSTGRES_DB=quantxalgo
+    volumes:
+      - quantxalgo-postgres:/var/lib/postgresql/data
+    healthcheck:
+      test: [ "CMD-SHELL", "pg_isready -U quantxalgo" ]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+    networks:
+      - quantxalgo-network
+    restart: unless-stopped
+
+  # ==========================================================================
+  # Redis Cache
+  # ==========================================================================
+  redis:
+    image: redis:7-alpine
+    container_name: quantxalgo-redis
+    ports:
+      - "6379:6379"
+    volumes:
+      - quantxalgo-redis:/data
+    command: redis-server --appendonly yes
+    healthcheck:
+      test: [ "CMD", "redis-cli", "ping" ]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+    networks:
+      - quantxalgo-network
+    restart: unless-stopped
+
+  # ==========================================================================
+  # Jupyter Lab (Research)
+  # ==========================================================================
+  jupyter:
+    build:
+      context: ..
+      dockerfile: docker/Dockerfile
+      target: development
+    container_name: quantxalgo-jupyter
+    ports:
+      - "8888:8888"
+    volumes:
+      - ../:/app
+      - quantxalgo-data:/app/data
+    environment:
+      - QUANTXALGO_ENV=development
+    command: jupyter lab --ip=0.0.0.0 --port=8888 --no-browser --allow-root --NotebookApp.token=''
+    networks:
+      - quantxalgo-network
+    profiles:
+      - research
+
+networks:
+  quantxalgo-network:
+    driver: bridge
+
+volumes:
+  quantxalgo-data:
+  quantxalgo-logs:
+  quantxalgo-postgres:
+  quantxalgo-redis:
